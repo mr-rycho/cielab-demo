@@ -15,6 +15,9 @@ import java.util.Random;
 
 public class ColorPickerTest {
 
+	private static final long COLOR_PICKER_SEED = 10L;
+	private static final long COLOR_RANDOM_SEED = 2L;
+
 	@Test
 	public void testMatrixLab() {
 		int colsBase = 10;
@@ -28,7 +31,7 @@ public class ColorPickerTest {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, w, h);
 		try {
-			ColorPickerLab colorPicker = new ColorPickerLab(10L);
+			ColorPickerLab colorPicker = new ColorPickerLab(COLOR_PICKER_SEED);
 			List<ColorYUV> cols = new ArrayList<>();
 			List<Lab> colLabs = new ArrayList<>();
 			for (int i = 0; i < colsBase; i++) {
@@ -38,7 +41,7 @@ public class ColorPickerTest {
 				cols.add(new ColorYUV(newColor));
 				colLabs.add(Lab.fromColor(newColor));
 			}
-			Random rnd = new Random(2L);
+			Random rnd = new Random(COLOR_RANDOM_SEED);
 			NumberFormat nf = new DecimalFormat("0.0000");
 			Double maxDist = null;
 			int maxx = -1;
