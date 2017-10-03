@@ -24,4 +24,4 @@ as the `n`-th color by each algorithm. You can see that the first algo picked th
 at least `0.0463` from every of `n-1` colors. However it is noticable that it is similar to the a-bit-darker pink
 (position 2 from the top). The _cielab2000_ algorithm picked the dark green color because its `minDist` is `26.1630` .
 
-The lab stuff taken from https://github.com/StanfordHCI/c3/blob/master/java/src/edu/stanford/vis/color/LAB.java .
+The lab stuff taken from [github/StanfordHCI](https://github.com/StanfordHCI/c3/blob/master/java/src/edu/stanford/vis/color/LAB.java) .
