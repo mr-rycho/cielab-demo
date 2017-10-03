@@ -111,7 +111,7 @@ public class ColorPickerTest {
 			g.dispose();
 		}
 		try {
-			ImageIO.write(out, "png", new File("outl.png"));
+			ImageIO.write(out, "png", new File("out.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
