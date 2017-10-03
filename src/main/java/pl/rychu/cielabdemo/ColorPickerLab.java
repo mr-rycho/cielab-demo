@@ -5,9 +5,18 @@ import java.util.*;
 import java.util.List;
 
 public class ColorPickerLab {
+
 	private final List<Lab> colors = new ArrayList<>();
 
-	private static final Random random = new Random();
+	private final Random random;
+
+	public ColorPickerLab() {
+		this.random = new Random();
+	}
+
+	public ColorPickerLab(long seed) {
+		this.random = new Random(seed);
+	}
 
 	public Color getNewColor() {
 		Collection<Color> rndcols = getRandomColors(5 + 2 * colors.size());
@@ -17,7 +26,7 @@ public class ColorPickerLab {
 		return farthest;
 	}
 
-	private static Collection<Color> getRandomColors(int n) {
+	private Collection<Color> getRandomColors(int n) {
 		List<Color> result = new ArrayList<>(n);
 
 		for (int i = 0; i < n; i++) {
@@ -41,10 +50,6 @@ public class ColorPickerLab {
 			}
 		}
 		return best;
-	}
-
-	public double dist(Lab col) {
-		return dist(colors, col);
 	}
 
 	private static double dist(Collection<Lab> base, Lab col) {

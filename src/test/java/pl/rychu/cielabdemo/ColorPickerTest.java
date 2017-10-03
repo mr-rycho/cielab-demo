@@ -28,7 +28,7 @@ public class ColorPickerTest {
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, w, h);
 		try {
-			ColorPickerLab colorPicker = new ColorPickerLab();
+			ColorPickerLab colorPicker = new ColorPickerLab(10L);
 			List<ColorYUV> cols = new ArrayList<>();
 			List<Lab> colLabs = new ArrayList<>();
 			for (int i = 0; i < colsBase; i++) {
@@ -38,7 +38,7 @@ public class ColorPickerTest {
 				cols.add(new ColorYUV(newColor));
 				colLabs.add(Lab.fromColor(newColor));
 			}
-			Random rnd = new Random();
+			Random rnd = new Random(2L);
 			NumberFormat nf = new DecimalFormat("0.0000");
 			Double maxDist = null;
 			int maxx = -1;
