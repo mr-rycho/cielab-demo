@@ -14,14 +14,17 @@ The `ColorPickerLab` picks `n` colors iteratively:
 To see how this algorithm is doing take a look at `outl.png`. On the left side we have already picked `n-1` colors (`n=11`).
 On the bottom there are `k` candidates (`k=10`) for the `n`-th color. Inside the matrix there are color distances:
 in every cell there are two numbers:
-* the number on the top is the distance calculated by euclidian in yuv space
+* the number on the top is the distance calculated by euclidian in yuv space (_e-yuv_)
 * the number below is the distance calculated by the _cie2000_ method
 
 The underlined numbers are `minDist`s.
 For many cases both algorithms pick the same color.
-Both numbers also appear on the bottom colored line. The underlined number mark which color was picked
-as the `n`-th color by each algorithm. You can see that the first algo picked the light-pink color because it is
-at least `0.0463` from every of `n-1` colors. However it is noticable that it is similar to the a-bit-darker pink
+Both numbers also appear on the bottom colored line. The underlined numbers in bottom line mark which color was picked
+as the `n`-th color by each algorithm. You can see that the first algorithm picked the light-pink color because it is
+at least `0.0463` from every of `n-1` colors. However it is noticeable that this color is similar to the a-bit-darker pink
 (position 2 from the top). The _cielab2000_ algorithm picked the dark green color because its `minDist` is `26.1630` .
+Also check other numbers: according to _e-yuv_ algorithm the light pink (down 10) is closer to salmon (left 10) than
+to dark pink (left 2) and dark green (down 8) is closer to dark blue (left 4) than the pinks to each other (0.0281 < 0.0737).
+Yellow (down 6) is closer to light green (left 1) than to other yellow (left 6).
 
 The lab stuff taken from [github/StanfordHCI](https://github.com/StanfordHCI/c3/blob/master/java/src/edu/stanford/vis/color/LAB.java) .
