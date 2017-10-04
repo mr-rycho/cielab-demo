@@ -2,7 +2,7 @@ This little module demonstrates the usefulness of the `cielab2000` color space a
 presents the internals of the `ColorPickerLab` class that utilizes the aforementioned algorithm.
 
 The problem is as follows: we want to pick a set of `n` distinct colors that are as different as possible. These colors
-will be used to paint a chart of n functions over time (so the colors must be "far" away from each other because no one
+will be used to paint a chart of `n` functions over time (so the colors must be "far" away from each other because no one
 wants to overstrain their eyes trying to distinguish if it is light gray or a little bit lighter gray).
 
 The `ColorPickerLab` picks `n` colors iteratively:
