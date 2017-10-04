@@ -2,7 +2,7 @@ This little module demonstrates the usefulness of the `cielab2000` color space a
 presents the internals of the `ColorPickerLab` class that utilizes the aforementioned algorithm.
 
 The problem is as follows: we want to pick a set of `n` distinct colors that are as different as possible. These colors
-will be used to paint a graph of n functions over time (so the colors must be "far" away from each other because no one
+will be used to paint a chart of n functions over time (so the colors must be "far" away from each other because no one
 wants to overstrain their eyes trying to distinguish if it is light gray or a little bit lighter gray).
 
 The `ColorPickerLab` picks `n` colors iteratively:
@@ -11,7 +11,10 @@ The `ColorPickerLab` picks `n` colors iteratively:
 * for each of the `k` colors count `minDist(c) = min(dist(c, col(1)), dist(c, col(2)), ..., dist(c, col(n-1)))`
 * for `n`-th color pick a color `c` with highest `minDist(c)`
 
-To see how this algorithm is doing take a look at `outl.png`. On the left side we have already picked `n-1` colors (`n=11`).
+To see how this algorithm is doing take a look at `outl.png`.
+![outl.png](./outl.png)
+
+On the left side we have already picked `n-1` colors (`n=11`).
 On the bottom there are `k` candidates (`k=10`) for the `n`-th color. Inside the matrix there are color distances:
 in every cell there are two numbers:
 * the number on the top is the distance calculated by euclidian in yuv space (_e-yuv_)
